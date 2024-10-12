@@ -1,0 +1,50 @@
+openapi: 3.0.3
+info:
+  title: Swagger Petstore - OpenAPI 3.0
+  description: |-
+components:
+  schemas:
+    Attempt:
+      type: object
+      properties:
+        id:
+          type: string
+        attempt:
+          type: integer
+        guesses:
+          $ref: '#/components/schemas/Guess'
+        previousCorrectGuesses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Guess'
+
+    Response:
+      type: object
+      properties:
+        id:
+          type: string
+        attempt:
+          type: integer
+        values:
+          type: array
+          items:
+            type: string
+        correct:
+          type: array
+          items:
+            $ref: '#/components/schemas/Guess'
+        incorrect:
+          type: array
+          items:
+            $ref: '#/components/schemas/Guess'
+
+    Guess:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: string
+        answer:
+          type: string
+
