@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.springframework.shell.standard.ShellComponent;
-import org.springframework.shell.standard.ShellMethod;
+// import org.springframework.shell.standard.ShellComponent;
+// import org.springframework.shell.standard.ShellMethod;
 
 import lombok.RequiredArgsConstructor;
 import online.glees.numble.model.Attempt;
@@ -16,7 +16,7 @@ import online.glees.numble.service.Game;
 /**
  * UserInterface
  */
-@ShellComponent
+// @ShellComponent
 @RequiredArgsConstructor
 public class UserInterface {
 
@@ -24,7 +24,7 @@ public class UserInterface {
 
     final private int GRID = 4;
 
-    @ShellMethod(key = "Numble", value = "Play Numble")
+    // @ShellMethod(key = "numble")
     public void run() {
         System.out.println("Welcome to Numble!");
         System.out.println("Group numbers that share a common thread.");

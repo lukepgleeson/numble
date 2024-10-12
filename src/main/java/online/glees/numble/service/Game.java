@@ -46,9 +46,9 @@ public class Game {
     private Response newGame() {
         Response response = new Response();
         response.setAttempt(1);
-        List<String> values = groupings.stream()
+        List<String> values = new ArrayList<>(groupings.stream()
                 .flatMap(group -> group.getValues().stream())
-                .map(i -> i.toString()).toList();
+                .map(i -> i.toString()).toList());
         Collections.shuffle(values);
         response.setValues(values);
         response.setId(UUID.randomUUID().toString());
@@ -63,7 +63,7 @@ public class Game {
         List<Group> correctGuesses = gameMapper.guessToGroup(attempt.getPreviousCorrectGuesses());
 
         groupings.forEach(group -> {
-            if (listCompare(group.getValues(), guess)) {
+            if (listCompare(new ArrayList<>(group.getValues()), new ArrayList<>(guess))) {
                 correctGuesses.add(group);
             }
         });

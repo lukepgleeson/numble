@@ -3,14 +3,12 @@ package online.glees.numble.service;
 import java.util.Arrays;
 import java.util.List;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
  * Group
  */
-@AllArgsConstructor
 @Getter
 @Setter
 public class Group {

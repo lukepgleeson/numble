@@ -1,4 +1,4 @@
-package online.glees.numble.application;
+package online.glees.numble;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
