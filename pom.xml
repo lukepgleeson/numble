@@ -28,12 +28,11 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-	</properties>
+        <groovy-all.version>4.0.16</groovy-all.version>
+        <gmavenplus-plugin.version>3.0.2</gmavenplus-plugin.version>
+    </properties>
+
     <dependencies>
-		<!-- <dependency> -->
-		<!-- 	<groupId>org.springframework.boot</groupId> -->
-		<!-- 	<artifactId>spring-boot-starter-data-jpa</artifactId> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -99,13 +98,22 @@
             <version>1.6.2</version>
         </dependency>
     </dependencies>
-	<build>
-        <resources>
-            <resource>
-                <directory>openapi/src/main/java/online/glees/numble/model</directory>
-            </resource>
-        </resources>
-		<plugins>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.2</version>
+                <executions>
+                    <execution>
+                        <id>default-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

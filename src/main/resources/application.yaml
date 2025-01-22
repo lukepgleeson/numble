@@ -1,7 +1,6 @@
 spring:
   application:
     name: numble
-spring:
   shell:
     script:
       enabled: true
